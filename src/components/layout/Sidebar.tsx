@@ -30,7 +30,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                 <div className="sidebar-header">
                     <div className="sidebar-brand">
                         <div className="sidebar-logo">
-                            <img src="/src/assets/logo.png" alt="Finsights Logo" />
+                            <img src="/logo.png" alt="Finsights Logo" />
                         </div>
                         <span className="sidebar-title">Finvoyant</span>
                     </div>
