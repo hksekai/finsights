@@ -1,0 +1,324 @@
+/* Dashboard Page Styles */
+/* Dashboard Page Styles */
+.dashboard-page {
+    padding: 1.25rem 1rem;
+    /* Reduced horizontal padding on mobile */
+    max-width: 90rem;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+    padding-top: 4rem;
+    /* Add space for mobile menu button */
+}
+
+@media (min-width: 1024px) {
+    .dashboard-page {
+        padding: 1.25rem 1.5rem;
+        padding-top: 1.25rem;
+        /* Reset top padding on desktop */
+    }
+}
+
+/* ===== Action Bar ===== */
+.dashboard-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Align add button to right on mobile */
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.add-panel-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(135deg, hsl(var(--color-primary)), hsl(217 91% 50%));
+    border-radius: 0.5rem;
+    border: 1px solid hsl(var(--color-primary) / 0.5);
+    box-shadow: 0 4px 12px hsl(var(--color-primary) / 0.25);
+    transition: all 0.2s ease;
+}
+
+.add-panel-btn:hover {
+    background: linear-gradient(135deg, hsl(217 91% 55%), hsl(217 91% 50%));
+    box-shadow: 0 6px 16px hsl(var(--color-primary) / 0.35);
+    transform: translateY(-1px);
+}
+
+.add-panel-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px hsl(var(--color-primary) / 0.2);
+}
+
+/* ===== Main Grid Layout ===== */
+/* Top section: Main chart (left) + KPI sidebar (right) */
+.dashboard-top-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .dashboard-top-grid {
+        grid-template-columns: 1fr 280px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .dashboard-top-grid {
+        grid-template-columns: 1fr 320px;
+    }
+}
+
+/* KPI Sidebar */
+.kpi-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Bottom section: 2-column grid for secondary panels */
+.dashboard-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .dashboard-bottom-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===== KPI Card ===== */
+.kpi-card {
+    padding: 1.25rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid hsl(var(--color-border) / 0.3);
+    position: relative;
+    overflow: hidden;
+    background-color: hsl(var(--color-bg-card) / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.kpi-card.highlight-card {
+    border-color: hsl(var(--color-primary) / 0.4);
+    background: linear-gradient(135deg, hsl(var(--color-bg-card) / 0.8), hsl(var(--color-primary) / 0.1));
+}
+
+.kpi-card-icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    opacity: 0.15;
+    transition: opacity 0.2s ease;
+}
+
+.kpi-card:hover .kpi-card-icon {
+    opacity: 0.25;
+}
+
+.kpi-card-icon.green {
+    color: hsl(var(--color-success));
+}
+
+.kpi-card-icon.orange {
+    color: hsl(var(--color-warning));
+}
+
+.kpi-card-icon.blue {
+    color: hsl(var(--color-primary));
+}
+
+.kpi-card-icon.red {
+    color: hsl(var(--color-danger));
+}
+
+.kpi-card-content {
+    position: relative;
+    z-index: 10;
+}
+
+.kpi-card-label {
+    color: hsl(var(--color-text-muted));
+    font-size: 0.8125rem;
+    font-weight: 500;
+    margin-bottom: 0.375rem;
+    letter-spacing: 0.01em;
+}
+
+.kpi-card-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.kpi-card-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.kpi-card-trend.green {
+    background: hsl(var(--color-success) / 0.15);
+    color: hsl(var(--color-success));
+}
+
+.kpi-card-trend.orange {
+    background: hsl(var(--color-warning) / 0.15);
+    color: hsl(var(--color-warning));
+}
+
+.kpi-card-trend.red {
+    background: hsl(var(--color-danger) / 0.15);
+    color: hsl(var(--color-danger));
+}
+
+.kpi-card-trend.blue {
+    background: hsl(var(--color-primary) / 0.15);
+    color: hsl(var(--color-primary));
+}
+
+/* ===== Panel Styles ===== */
+.panel {
+    padding: 1.25rem 1.5rem;
+    border-radius: 0.75rem;
+    background-color: hsl(var(--color-bg-card) / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--color-border) / 0.3);
+}
+
+.panel-full {
+    grid-column: 1 / -1;
+}
+
+.panel-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: white;
+}
+
+.panel-chart {
+    height: 280px;
+}
+
+.panel-chart-large {
+    height: 320px;
+}
+
+/* ===== Recurring List ===== */
+.recurring-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+/* Custom scrollbar for recurring list */
+.recurring-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.recurring-list::-webkit-scrollbar-track {
+    background: hsl(var(--color-bg-elevated) / 0.3);
+    border-radius: 3px;
+}
+
+.recurring-list::-webkit-scrollbar-thumb {
+    background: hsl(var(--color-border) / 0.5);
+    border-radius: 3px;
+}
+
+.recurring-list::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--color-border) / 0.8);
+}
+
+.recurring-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: hsl(var(--color-bg-elevated) / 0.5);
+    border-radius: 0.5rem;
+    border: 1px solid hsl(var(--color-border) / 0.2);
+}
+
+.recurring-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.recurring-merchant {
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: white;
+}
+
+.recurring-detail {
+    font-size: 0.75rem;
+    color: hsl(var(--color-text-muted));
+}
+
+.recurring-amount {
+    font-weight: 600;
+    color: hsl(var(--color-primary));
+    font-size: 0.9375rem;
+}
+
+.no-data {
+    color: hsl(var(--color-text-muted));
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.custom-tooltip {
+    background-color: hsl(var(--color-bg-card));
+    border: 1px solid hsl(var(--color-border) / 0.5);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.custom-tooltip .label {
+    color: hsl(var(--color-text-muted));
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.custom-tooltip .value {
+    color: hsl(var(--color-primary));
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* ===== Legacy Overrides ===== */
+.insights-grid,
+.kpi-grid,
+.chart-grid {
+    display: none !important;
+    /* Hide old grids, using new layout */
+}

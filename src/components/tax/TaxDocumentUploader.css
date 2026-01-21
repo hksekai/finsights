@@ -1,0 +1,4 @@
+/* TaxDocumentUploader.css - Minimal scoped styles if needed, mostly utilizing Tailwind/utility classes in the TSX */
+.tax-uploader {
+    width: 100%;
+}

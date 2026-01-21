@@ -1,0 +1,371 @@
+/* Signal Verification Page Styles */
+.verify-page {
+    height: calc(100vh - 2rem);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.verify-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.verify-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.cancel-btn {
+    padding: 0.5rem 1rem;
+    color: hsl(var(--color-text-muted));
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.cancel-btn:hover {
+    color: white;
+}
+
+.confirm-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: hsl(142 71% 35%);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    box-shadow: 0 4px 6px -1px hsl(142 71% 25% / 0.2);
+}
+
+.confirm-btn:hover {
+    background-color: hsl(142 71% 40%);
+}
+
+/* Split View */
+.verify-content {
+    flex: 1;
+    display: flex;
+    gap: 1.5rem;
+    min-height: 0;
+}
+
+/* Image Preview Panel */
+.image-preview-container {
+    flex: 1;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    position: relative;
+    background-color: hsl(var(--color-bg-card) / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--color-border) / 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.image-controls {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: hsl(var(--color-bg-surface) / 0.8);
+    backdrop-filter: blur(4px);
+    padding: 0.25rem;
+    border-radius: 9999px;
+    border: 1px solid hsl(var(--color-border) / 0.3);
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.control-btn {
+    padding: 0.4rem;
+    border-radius: 50%;
+    color: hsl(var(--color-text-secondary));
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background-color: hsl(var(--color-primary) / 0.1);
+    color: hsl(var(--color-primary));
+}
+
+.zoom-level {
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+    color: hsl(var(--color-text-primary));
+    min-width: 3rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.image-scroll-area {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: flex-start;
+    /* Start vertically so long images scroll properly */
+    padding: 2rem;
+}
+
+.image-scroll-area img {
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: width 0.2s ease-out;
+}
+
+.image-preview-empty {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(var(--color-text-muted));
+}
+
+.image-preview-label {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: hsl(0 0% 0% / 0.6);
+    backdrop-filter: blur(4px);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: hsl(var(--color-text-primary) / 0.8);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Signals List */
+.signals-list {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    padding-bottom: 5rem;
+}
+
+.empty-signals {
+    padding: 2rem;
+    text-align: center;
+    color: hsl(var(--color-text-muted));
+    border: 1px dashed hsl(var(--color-border) / 0.5);
+    border-radius: 0.75rem;
+}
+
+/* Signal Card */
+.signal-card {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid hsl(var(--color-border) / 0.3);
+    transition: border-color 0.15s ease;
+    position: relative;
+    background-color: hsl(var(--color-bg-card) / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.signal-card:hover {
+    border-color: hsl(var(--color-border) / 0.5);
+}
+
+.remove-signal-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem;
+    color: hsl(var(--color-text-muted));
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.15s ease;
+}
+
+.signal-card:hover .remove-signal-btn {
+    opacity: 1;
+}
+
+.remove-signal-btn:hover {
+    color: hsl(var(--color-danger));
+}
+
+/* Signal Card Header */
+.signal-card-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.signal-merchant-input {
+    background: transparent;
+    border: none;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+    outline: none;
+    width: 100%;
+    padding: 0.25rem;
+    margin-left: -0.25rem;
+    border-radius: 0.25rem;
+}
+
+.signal-merchant-input:focus {
+    box-shadow: 0 0 0 1px hsl(var(--color-primary) / 0.5);
+}
+
+.signal-amount-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.signal-amount-icon.outflow {
+    color: hsl(var(--color-danger));
+}
+
+.signal-amount-icon.inflow {
+    color: hsl(var(--color-success));
+}
+
+.signal-amount-input {
+    background: transparent;
+    border: none;
+    font-size: 1.125rem;
+    font-family: monospace;
+    font-weight: 700;
+    width: 6rem;
+    text-align: right;
+    outline: none;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+}
+
+.signal-amount-input:focus {
+    box-shadow: 0 0 0 1px hsl(var(--color-primary) / 0.5);
+}
+
+.signal-amount-input.outflow {
+    color: hsl(var(--color-danger));
+}
+
+.signal-amount-input.inflow {
+    color: hsl(var(--color-success));
+}
+
+/* Signal Card Fields */
+.signal-card-fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.signal-field {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: hsl(var(--color-text-muted));
+    background-color: hsl(var(--color-text-primary) / 0.05);
+    padding: 0.375rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.signal-field input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: hsl(var(--color-text-primary));
+}
+
+.signal-field input[type="date"] {
+    height: 1.25rem;
+}
+
+/* Signal Selectors */
+.signal-selectors {
+    grid-column: span 2;
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.signal-select {
+    flex: 1;
+    appearance: none;
+    background-color: hsl(var(--color-bg-card));
+    border: 1px solid hsl(var(--color-border) / 0.5);
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    padding-right: 1.5rem;
+    color: hsl(var(--color-text-secondary));
+    font-size: 0.75rem;
+    outline: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    /* Custom Chevron Arrow (Scaled down slightly) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.25rem center;
+    background-size: 0.875rem;
+}
+
+.signal-select:hover {
+    border-color: hsl(var(--color-border-hover));
+    background-color: hsl(var(--color-bg-card-hover));
+}
+
+.signal-select:focus {
+    border-color: hsl(var(--color-primary));
+    box-shadow: 0 0 0 1px hsl(var(--color-primary) / 0.5);
+}
+
+.flow-select {
+    width: 6rem;
+    font-weight: 500;
+}
+
+.flow-select.outflow {
+    background-color: hsl(var(--color-danger) / 0.1);
+    color: hsl(var(--color-danger));
+}
+
+.flow-select.inflow {
+    background-color: hsl(var(--color-success) / 0.1);
+    color: hsl(var(--color-success));
+}
+
+/* No Data State */
+.no-data-message {
+    padding: 2rem;
+    text-align: center;
+    color: hsl(var(--color-text-muted));
+}

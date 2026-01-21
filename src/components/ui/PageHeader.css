@@ -1,0 +1,37 @@
+/* Page Header Component Styles */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.page-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.page-header-content h1 {
+    font-size: 1.875rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.page-header-content p {
+    color: hsl(var(--color-text-secondary));
+}
+
+.page-header-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.page-header-subtitle {
+    color: #94a3b8;
+    font-size: 1rem;
+}

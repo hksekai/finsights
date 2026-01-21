@@ -1,0 +1,140 @@
+/* Settings Page Styles */
+.settings-page {
+    padding: 2rem;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.settings-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.settings-section {
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid hsl(var(--color-border) / 0.3);
+    background-color: hsl(var(--color-bg-card) / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.settings-section.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.settings-section-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.settings-icon {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: hsl(var(--color-primary) / 0.1);
+    color: hsl(var(--color-primary));
+}
+
+.settings-icon.muted {
+    background-color: hsl(var(--color-text-primary) / 0.05);
+    color: hsl(var(--color-text-muted));
+}
+
+.settings-content {
+    flex: 1;
+}
+
+.settings-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.settings-title.muted {
+    color: hsl(var(--color-text-muted));
+}
+
+.settings-description {
+    color: hsl(var(--color-text-muted));
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.settings-input-row {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.settings-input {
+    flex: 1;
+    background-color: hsl(var(--color-bg-app));
+    border: 1px solid hsl(var(--color-border));
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.settings-input:focus {
+    border-color: hsl(var(--color-primary));
+}
+
+.save-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    background-color: hsl(var(--color-primary));
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: hsl(217 91% 50%);
+}
+
+.save-btn.saved {
+    background-color: hsl(var(--color-success) / 0.2);
+    color: hsl(var(--color-success));
+    border: 1px solid hsl(var(--color-success) / 0.5);
+}
+
+.seed-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 1px solid hsl(var(--color-primary) / 0.5);
+    background-color: hsl(var(--color-primary) / 0.1);
+    color: hsl(var(--color-primary));
+    cursor: pointer;
+}
+
+.seed-btn:hover:not(:disabled) {
+    background-color: hsl(var(--color-primary) / 0.2);
+}
+
+.seed-btn:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+.seed-status {
+    display: flex;
+    align-items: center;
+    color: hsl(var(--color-success));
+    font-size: 0.875rem;
+    font-weight: 500;
+}

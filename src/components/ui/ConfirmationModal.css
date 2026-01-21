@@ -1,0 +1,51 @@
+.confirmation-modal {
+    max-width: 400px;
+    width: 90%;
+    /* Override standard modal width if needed, or rely on shared modal styles */
+}
+
+.modal-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.modal-icon-destructive {
+    color: hsl(var(--color-danger));
+}
+
+.modal-message {
+    color: hsl(var(--color-text-secondary));
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.btn-destructive {
+    background-color: hsl(var(--color-danger));
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    /* Rounded to match cancel button */
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-destructive:hover {
+    background-color: hsl(var(--color-danger) / 0.9);
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background-color: hsl(var(--color-primary));
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    /* Rounded to match cancel button */
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: hsl(var(--color-primary) / 0.9);
+    transform: translateY(-1px);
+}
