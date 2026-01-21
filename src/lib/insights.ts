@@ -48,7 +48,7 @@ const groupAndNormalize = (signals: FinancialSignal[]): RecurringEntity[] => {
 
     const results: RecurringEntity[] = [];
 
-    groups.forEach((groupSignals, merchantKey) => {
+    groups.forEach((groupSignals, _merchantKey) => {
         if (groupSignals.length === 0) return;
 
         // Sort by date descending (newest first)

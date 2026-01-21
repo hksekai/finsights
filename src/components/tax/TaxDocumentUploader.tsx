@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { UploadCloud, Loader2, AlertCircle, FileText, CheckCircle } from 'lucide-react';
+import { UploadCloud, Loader2, AlertCircle, CheckCircle } from 'lucide-react';
 import { useApp } from '@/lib/context/AppContext';
 import { analyzeTaxDocument } from '@/lib/llm';
 import { db } from '@/lib/db';
@@ -94,8 +94,8 @@ export const TaxDocumentUploader = ({ onUploadComplete }: TaxDocumentUploaderPro
                 <div
                     {...getRootProps()}
                     className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors ${isDragActive
-                            ? 'border-blue-500 bg-blue-500/10'
-                            : 'border-slate-700 hover:border-slate-500 bg-slate-800/30'
+                        ? 'border-blue-500 bg-blue-500/10'
+                        : 'border-slate-700 hover:border-slate-500 bg-slate-800/30'
                         }`}
                 >
                     <input {...getInputProps()} />
